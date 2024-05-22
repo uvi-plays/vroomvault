@@ -1,0 +1,35 @@
+﻿Reflection
+
+
+During the development of my game, I faced several challenges and made a few mistakes. This reflection aims to explain those issues and how I addressed them.
+
+
+Mistakes and Issues
+1. **Script Communication and References**:
+   One of the initial problems was ensuring proper communication between different scripts, especially between `ShopManager` and `BackpackPanelManager`. I initially forgot to create and assign references to other components, causing null reference errors.
+
+
+2. **Instantiating UI Elements**:
+   Another issue was dynamically updating the UI with instantiated prefabs. I struggled with instantiating the purchased items in the backpack panel. Misnaming variables and not correctly setting up prefab references led to errors and confusion.
+
+
+3. **Managing Backpack Capacity**:
+   Implementing the logic for managing the backpack's limited capacity also posed a challenge. Initially, I didn't properly check the capacity before adding new items, leading to scenarios where the backpack exceeded its intended limit.
+
+
+Solutions and Fixes
+
+
+1. **Proper Script References**:
+   To resolve issues with script communication, I ensured each script had the necessary references to other components. For example, I added a public `BackpackPanelManager` field in the `ShopManager` and assigned it via the Unity Editor, allowing me to call methods directly.
+
+
+2. **Prefabs and Instantiation**:
+   I addressed the prefab instantiation problem by creating a proper prefab for the backpack items and ensuring all necessary components were attached. By following consistent naming conventions, I reduced the likelihood of typos and mismatches.
+
+
+3. **Capacity Management**:
+   To manage the backpack's capacity, I added a check within the `AddToBackpack` method to ensure items were only added if the backpack was not full. Additionally, I displayed a message when the backpack was at capacity, improving the user experience.
+
+
+In conclusion, these mistakes and issues were part of the learning process. By carefully debugging, seeking references, and systematically addressing each problem, I improved the game's functionality and user experience. This process emphasised the importance of proper planning, thorough testing, and meticulous attention to detail in game development.
